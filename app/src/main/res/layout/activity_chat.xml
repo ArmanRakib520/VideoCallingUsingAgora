@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".ui.activity.ChatActivity">
+
+    <TextView
+        android:id="@+id/login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickLogin"
+        android:text="@string/login_button"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:background="@drawable/edittext_bg"
+        android:padding="10dp"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/uid"
+        app:layout_constraintEnd_toStartOf="@+id/logout_button"
+        app:layout_constraintTop_toTopOf="@+id/uid" />
+
+    <TextView
+        android:id="@+id/logout_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickLogout"
+        android:text="@string/logout_button"
+        android:textColor="@color/black"
+        android:background="@drawable/edittext_bg"
+        android:textSize="18dp"
+        android:padding="10dp"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/uid"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/uid" />
+
+    <EditText
+        android:id="@+id/uid"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_height="40dp"
+        android:hint="@string/uid"
+        android:inputType="text"
+        android:lines="1"
+        android:layout_marginTop="35dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/join_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/edittext_bg"
+        android:onClick="onClickJoin"
+        android:padding="10dp"
+        android:text="@string/join_button"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/channel_name"
+        app:layout_constraintEnd_toStartOf="@+id/leave_button"
+        app:layout_constraintTop_toTopOf="@+id/channel_name" />
+
+    <TextView
+        android:id="@+id/leave_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/edittext_bg"
+        android:onClick="onClickLeave"
+        android:padding="10dp"
+        android:text="@string/leave_button"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/join_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/join_button" />
+
+    <EditText
+        android:id="@+id/channel_name"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:hint="@string/channel_name"
+        android:inputType="text"
+        android:lines="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/uid" />
+
+    <EditText
+        android:id="@+id/msg_box"
+        android:layout_width="198dp"
+        android:layout_height="57dp"
+        android:layout_marginBottom="12dp"
+        android:ems="10"
+        android:hint="@string/msg"
+        android:inputType="textPersonName"
+        android:singleLine="false"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@+id/uid"
+        app:layout_constraintTop_toBottomOf="@+id/channel_name" />
+
+    <TextView
+        android:id="@+id/send_peer_msg_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittext_bg"
+        android:onClick="onClickSendPeerMsg"
+        android:padding="10dp"
+        android:text="@string/send_peer_msg_button"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/peer_name"
+        app:layout_constraintEnd_toEndOf="@+id/leave_button"
+        app:layout_constraintTop_toTopOf="@+id/peer_name" />
+
+    <TextView
+        android:id="@+id/send_channel_msg_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittext_bg"
+        android:onClick="onClickSendChannelMsg"
+        android:padding="10dp"
+        android:text="@string/send_channel_msg_button"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/msg_box"
+        app:layout_constraintEnd_toEndOf="@+id/send_peer_msg_button"
+        app:layout_constraintTop_toTopOf="@+id/msg_box" />
+
+    <EditText
+        android:id="@+id/peer_name"
+        android:layout_width="121dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="@string/peer_name"
+        android:layout_marginTop="20dp"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="@+id/msg_box"
+        app:layout_constraintTop_toBottomOf="@+id/msg_box" />
+
+    <TextView
+        android:id="@+id/message_history"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="#AEA8A8"
+        android:freezesText="false"
+        android:layout_marginTop="50dp"
+        android:isScrollContainer="false"
+        android:scrollbars="vertical"
+        android:textColor="#2196F3"
+        android:padding="10dp"
+        android:layout_margin="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/peer_name" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
